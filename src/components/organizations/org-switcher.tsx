@@ -13,6 +13,7 @@ import {
 import { cn } from "@/lib/utils"
 import { Settings2 } from "lucide-react"
 import { PlusIcon } from "@radix-ui/react-icons"
+import { CreateOrganization } from "./create-organization"
 export const OrgSwitcher = () => {
   return (
     <Popover>
@@ -20,7 +21,7 @@ export const OrgSwitcher = () => {
         <div
           className={cn(
             buttonVariants({ variant: "outline" }),
-            "h-fit w-full items-center justify-between gap-2 rounded-lg p-1 hover:bg-accent/50"
+            "h-fit w-full items-center justify-between gap-4 rounded-lg p-1 hover:bg-accent/50"
           )}
         >
           <Avatar className="rounded-md">
@@ -36,7 +37,7 @@ export const OrgSwitcher = () => {
         </div>
       </PopoverTrigger>
       <PopoverContent align="start" className="w-full min-w-96 space-y-2">
-        <div className="flex gap-2">
+        <div className="flex gap-4">
           <Avatar className="rounded-md">
             <AvatarFallback className="rounded-md text-base text-background">
               D
@@ -59,7 +60,7 @@ export const OrgSwitcher = () => {
         <Separator />
         <Button
           variant="ghost"
-          className="flex h-fit w-full items-center justify-between gap-2 rounded-lg bg-accent/50 p-1 hover:bg-accent/90"
+          className="flex h-fit w-full items-center justify-between gap-4 rounded-lg bg-accent/50 p-1 hover:bg-accent/90"
         >
           <Avatar className="h-8 w-8 rounded-md">
             <AvatarFallback className="rounded-md text-base text-background">
@@ -74,7 +75,7 @@ export const OrgSwitcher = () => {
         </Button>
         <Button
           variant="ghost"
-          className="flex h-fit w-full items-center justify-between gap-2 rounded-lg bg-accent/50 p-1 hover:bg-accent/90"
+          className="flex h-fit w-full items-center justify-between gap-4 rounded-lg bg-accent/50 p-1 hover:bg-accent/90"
         >
           <Avatar className="h-8 w-8 rounded-md">
             <AvatarFallback className="rounded-md text-base text-background">
@@ -87,15 +88,7 @@ export const OrgSwitcher = () => {
             className="mr-3 text-muted-foreground"
           />
         </Button>
-        <div
-          className={cn(
-            buttonVariants({ variant: "ghost" }),
-            "h-fit w-full items-center justify-start gap-6 rounded bg-accent/50 px-2 hover:bg-accent/70"
-          )}
-        >
-          <PlusIcon className="size-3.5" />
-          <p className="text-xs text-muted-foreground">Manage Organization</p>
-        </div>
+        <CreateOrganization />
       </PopoverContent>
     </Popover>
   )

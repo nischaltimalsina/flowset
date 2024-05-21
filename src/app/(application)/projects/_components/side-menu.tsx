@@ -1,9 +1,10 @@
-import React from "react"
-import { OrgSwitch } from "./org-switch"
-import { accounts } from "@/assets/data/data"
-import { Icons } from "@/components/shared/icons"
-import { siteConfig } from "@/config/site"
 import { OrgSwitcher } from "@/components/organizations/org-switcher"
+import { Icons } from "@/components/shared/icons"
+import { buttonVariants } from "@/components/ui"
+import { siteConfig } from "@/config/site"
+import { cn } from "@/lib/utils"
+import { GridIcon, StarIcon } from "@radix-ui/react-icons"
+import { File } from "lucide-react"
 
 export const SideMenu = () => {
   return (
@@ -16,6 +17,35 @@ export const SideMenu = () => {
       </div>
       <div className="p-4">
         <OrgSwitcher />
+      </div>
+      <div className="space-y-1 px-4">
+        <div
+          className={cn(
+            buttonVariants({ variant: "ghost" }),
+            "h-10 w-full items-center justify-start gap-2 rounded-lg bg-accent/70 px-3 py-2"
+          )}
+        >
+          <File className="size-4" />
+          <p className="text-sm text-muted-foreground">Drafts</p>
+        </div>
+        <div
+          className={cn(
+            buttonVariants({ variant: "ghost" }),
+            "h-10 w-full items-center justify-start gap-2 rounded-lg px-3 py-2"
+          )}
+        >
+          <GridIcon className="size-4" />
+          <p className="text-sm text-muted-foreground">Your Teams</p>
+        </div>
+        <div
+          className={cn(
+            buttonVariants({ variant: "ghost" }),
+            "h-10 w-full items-center justify-start gap-2 rounded-lg px-3 py-2"
+          )}
+        >
+          <StarIcon className="size-4" />
+          <p className="text-sm text-muted-foreground">Favourites</p>
+        </div>
       </div>
     </div>
   )
