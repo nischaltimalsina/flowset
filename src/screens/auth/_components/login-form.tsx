@@ -10,7 +10,7 @@ import { Icons } from "@/components/shared/icons"
 import { buttonVariants } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
-import { toast } from "@/components/ui/use-toast"
+import { toast } from "sonner"
 import { cn } from "@/lib/utils"
 import { userAuthSchema } from "@/lib/validations/auth"
 import Link from "next/link"
@@ -49,11 +49,9 @@ export function LoginForm({ className, ...props }: UserAuthFormProps) {
     })
     setIsLoading(false)
 
-    return toast({
-      title: "Welcome to Next Boilerplate",
-      description:
-        "You have successfully Signed in. You may continue using your account.",
-    })
+    return toast(
+      "You have successfully Signed in. You may continue using your account."
+    )
   }
 
   React.useEffect(() => {

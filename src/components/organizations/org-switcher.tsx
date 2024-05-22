@@ -4,6 +4,8 @@ import {
   Avatar,
   AvatarFallback,
   Button,
+  Dialog,
+  DialogTrigger,
   Popover,
   PopoverContent,
   PopoverTrigger,
@@ -88,7 +90,22 @@ export const OrgSwitcher = () => {
             className="mr-3 text-muted-foreground"
           />
         </Button>
-        <CreateOrganization />
+        <Dialog>
+          <DialogTrigger className="w-full">
+            <div
+              className={cn(
+                buttonVariants({ variant: "ghost" }),
+                "h-fit w-full items-center justify-start gap-6 rounded bg-accent/60 px-2 hover:bg-accent/90"
+              )}
+            >
+              <PlusIcon className="size-3.5" />
+              <p className="text-xs text-muted-foreground">
+                Create Organization
+              </p>
+            </div>
+          </DialogTrigger>
+          <CreateOrganization />
+        </Dialog>
       </PopoverContent>
     </Popover>
   )

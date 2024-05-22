@@ -35,7 +35,7 @@ export const SideMenu = () => {
           )}
         >
           <GridIcon className="size-4" />
-          <p className="text-sm text-muted-foreground">Your Teams</p>
+          <p className="text-sm text-muted-foreground">Projects</p>
         </div>
         <div
           className={cn(

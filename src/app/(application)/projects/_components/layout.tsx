@@ -6,7 +6,9 @@ import { SideMenu } from "./side-menu"
 export const ProjectsLayout = ({ children }: Children) => {
   return (
     <main className="flex h-screen w-full">
-      <SideMenu />
+      <div className="hidden h-full w-fit md:flex">
+        <SideMenu />
+      </div>
       <div className=" grow">
         <ProjectsNav />
         {children}

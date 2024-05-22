@@ -9,7 +9,7 @@ import { Icons } from "@/components/shared/icons"
 import { buttonVariants } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
-import { toast } from "@/components/ui/use-toast"
+import { toast } from "sonner"
 import { cn } from "@/lib/utils"
 import { userAuthSchema } from "@/lib/validations/auth"
 import Link from "next/link"
@@ -34,10 +34,9 @@ export function SignupForm({ className, ...props }: UserAuthFormProps) {
     console.log(data)
     setIsLoading(false)
 
-    return toast({
-      title: "Check your email",
-      description: "We sent you a login link. Be sure to check your spam too.",
-    })
+    return toast(
+      "Check your email. We sent you a login link. Be sure to check your spam too."
+    )
   }
 
   return (

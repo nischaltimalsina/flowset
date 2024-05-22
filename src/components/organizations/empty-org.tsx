@@ -1,13 +1,19 @@
 import { Button } from "@/components/ui/button"
-import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog"
+import { Dialog, DialogTrigger } from "@/components/ui/dialog"
 
 import Image from "next/image"
+import { CreateOrganization } from "./create-organization"
 
 export const EmptyOrg = () => {
   return (
     <div className="flex h-full flex-col items-center justify-center">
-      <Image src="/elements.svg" alt="Empty" height={200} width={200} />
-      <h2 className="mt-6 text-2xl font-semibold">Welcome to Miro Clone</h2>
+      <Image
+        src="/assets/images/user-flow.svg"
+        alt="Empty"
+        height={200}
+        width={200}
+      />
+      <h2 className="mt-6 text-2xl font-semibold">Welcome to Printex</h2>
       <p className="mt-2 text-sm text-muted-foreground">
         Create an organization to get started
       </p>
@@ -16,7 +22,7 @@ export const EmptyOrg = () => {
           <DialogTrigger asChild>
             <Button size="lg">Create organization</Button>
           </DialogTrigger>
-          <DialogContent className="max-w-[480px] border-none bg-transparent p-0"></DialogContent>
+          <CreateOrganization />
         </Dialog>
       </div>
     </div>
