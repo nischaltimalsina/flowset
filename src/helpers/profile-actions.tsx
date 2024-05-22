@@ -1,4 +1,4 @@
-import { toast } from "@/components/ui/use-toast"
+import { toast } from "sonner"
 
 async function createProfile(userId: string) {
   const response = await fetch(`/api/profile/${userId}`, {
@@ -6,11 +6,7 @@ async function createProfile(userId: string) {
   })
 
   if (!response?.ok) {
-    toast({
-      title: "Something went wrong.",
-      description: "Your post was not deleted. Please try again.",
-      variant: "destructive",
-    })
+    toast.error("Your Profile was not created. Please try again.")
   }
 
   return true
@@ -22,11 +18,7 @@ async function updateProfile(userId: string) {
   })
 
   if (!response?.ok) {
-    toast({
-      title: "Something went wrong.",
-      description: "Your post was not deleted. Please try again.",
-      variant: "destructive",
-    })
+    toast("Your Profile was not updated. Please try again.")
   }
 
   return true
