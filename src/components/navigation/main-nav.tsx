@@ -10,7 +10,6 @@ import { Icons } from "@/components/shared/icons"
 import { siteConfig } from "@/config/site"
 import { cn } from "@/lib/utils"
 import { type MainNavItem } from "@/types"
-import { ModeToggle } from "../shared/mode-toggle"
 import { signOut, useSession } from "next-auth/react"
 import {
   DropdownMenu,
@@ -63,7 +62,9 @@ export function MainNav({ items, children }: MainNavProps) {
       ) : null}
       <div className="flex items-center gap-2">
         <Link href={"/login"} className="ml-2 text-primary">
-          {status === "unauthenticated" ? "login / register" : "--"}
+          {status === "unauthenticated"
+            ? "Login / Register"
+            : data?.user.firstName}
         </Link>
         {status === "authenticated" && (
           <DropdownMenu>
